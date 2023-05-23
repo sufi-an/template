@@ -9,6 +9,6 @@ export default class ProductApi {
       console.log(res, "product api");
     });
 
-    return l;
+    return response;
   };
 }
