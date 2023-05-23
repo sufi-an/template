@@ -35,16 +35,15 @@ export default {
   },
   methods: {
     async loadRowData() {
-      await this.productApi.getProducts().then((res) => {
-        console.log(res, "prod list");
-        this.rowData = res;
-      });
-      // .then((response) => {
-      //   return response.json();
-      // })
-      // .then((json) => {
-      //   this.rowData = json;
-      // });
+      await this.productApi
+        .getProducts()
+        .then((res) => {
+          console.log(res, "prod list");
+          this.rowData = res;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
     },
     createColDefs() {
       return [
